@@ -1,0 +1,36 @@
+<%# app/views/home/index.html.erb %>
+<div class="home-container">
+  <header class="hero">
+    <h1 class="hero__title">Hanaso</h1>
+  </header>
+
+  <section class="hero__cta">
+    <%= link_to "#", class: "btn btn--primary btn--cta" do %>
+      <div class="btn__icon">🤖</div>
+      <div class="btn__label">AIに相談する</div>
+      <p class="btn__text">子どもの体調、離乳食のことなど</p>
+    <% end %>
+  </section>
+
+  <section class="features">
+    <h2 class="features__title">他の機能も試してみる</h2>
+    <div class="features__grid">
+      <%= link_to "#", class: "card card--purple" do %>
+        <div class="card__icon">🩺</div>
+        <div class="card__label">症状チェック</div>
+      <% end %>
+      <%= link_to "#", class: "card card--green" do %>
+        <div class="card__icon">📚</div>
+        <div class="card__label">医療コラム</div>
+      <% end %>
+      <%= link_to "#", class: "card card--yellow" do %>
+        <div class="card__icon">🏥</div>
+        <div class="card__label">病院検索</div>
+      <% end %>
+      <%= link_to "#", class: "card card--white" do %>
+        <div class="card__icon">📈</div>
+        <div class="card__label">相談履歴</div>
+      <% end %>
+    </div>
+  </section>
+</div>

@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+ /* 画面全体の中央寄せ＆最大幅 */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 24px;  /* 両サイドの余白 */
+  box-sizing: border-box;
+}
+
+/* タブレット表示時 */
+@media (max-width: 1024px) {
+
+}
+
+ /* スマホ表示時 */
+ @media (max-width: 599px) {
+
+ }
+
+ /* ヘッダー */
+ header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+header a {
+  margin-left: 1rem;
+  color: #444;
+  text-decoration: none;
+  font-weight: bold;
+}
+header a:hover {
+  color: #000;
+}

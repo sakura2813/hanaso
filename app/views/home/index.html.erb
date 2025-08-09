@@ -1,0 +1,69 @@
+<%# app/views/home/index.html.erb %>
+<div class="container mx-auto max-w-4xl py-4">
+        <main>
+            <!-- メインのCTA（行動喚起）エリア -->
+            <section class="bg-white rounded-2xl shadow-lg p-8 mb-12 text-center">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">チャット相談</h2>
+                <p class="text-gray-500 mb-6">子どもの体調、離乳食のことなど、<br class="sm:hidden">いつでもご相談ください。</p>
+                <%= link_to "相談する", chat_threads_path,class: "inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full py-4 px-10 text-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" %>
+            </section>
+
+            <!-- 機能一覧エリア -->
+            <section>
+                <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">他の機能も試してみる</h2>
+                
+                <!-- 機能カードのグリッドレイアウト -->
+                <!-- PCでは2列、スマホでは1列で表示されます -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                    <!-- 症状チェックカード -->
+                    <a href="#" class="group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="bg-blue-100 rounded-full p-4 mb-4">
+                            <!-- アイコン (SVG) -->
+                            <svg class="w-10 h-10 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">症状チェック</h3>
+                        <p class="text-gray-500 text-sm">気になる症状から病気の可能性を調べます。</p>
+                    </a>
+
+                    <!-- 医療コラムカード -->
+                    <a href="#" class="group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="bg-green-100 rounded-full p-4 mb-4">
+                            <!-- アイコン (SVG) -->
+                            <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">医療コラム</h3>
+                        <p class="text-gray-500 text-sm">子育てに役立つ健康情報をお届けします。</p>
+                    </a>
+
+                    <!-- 病院検索カード -->
+                    <a href="#" class="group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="bg-yellow-100 rounded-full p-4 mb-4">
+                            <!-- アイコン (SVG) -->
+                            <svg class="w-10 h-10 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">病院検索</h3>
+                        <p class="text-gray-500 text-sm">お近くの小児科や夜間診療を探せます。</p>
+                    </a>
+
+                    <!-- 相談履歴カード -->
+                    <a href="#" class="group bg-white rounded-2xl shadow-lg p-6 flex flex-col items-center text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        <div class="bg-purple-100 rounded-full p-4 mb-4">
+                            <!-- アイコン (SVG) -->
+                            <svg class="w-10 h-10 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">相談履歴</h3>
+                        <p class="text-gray-500 text-sm">過去の相談内容をいつでも確認できます。</p>
+                    </a>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- フッターエリア -->
+        <footer class="text-center text-xs text-gray-400 mt-12 py-4 border-t border-gray-200">
+            <p>&copy; 2025 Hanaso. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+</div>

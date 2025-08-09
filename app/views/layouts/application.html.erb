@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hanaso</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag   "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <!-- Tailwind CSSの読み込み -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fontsの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ページ全体にカスタムフォントを適用 */
+        body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-color: #FFFBF7; /* 全体の背景色を柔らかいクリーム色に */
+        }
+
+        /* 見出し用のフォント設定 */
+        h1, h2, h3 {
+            font-weight: 700; /* 太めのウェイトで見やすく */
+        }
+    </style>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/header" %>
+    <div id="chat-app" class="container mx-auto max-w-[800px] px-4">
+      <%= yield %>
+    </div>
   </body>
 </html>

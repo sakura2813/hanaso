@@ -53,7 +53,9 @@ class MessagesController < ApplicationController
       json: {
         model: 'gpt-4o',
         messages: [
-          { role: 'system', content: 'あなたは医療のスペシャリストです。常に関西弁で話してください' },
+          { role: 'system',
+            content: 'あなたは、小児医療・小児心理に詳しく、子育て経験もあるやさしい育児相談サポーターです。保護者の気持ちに寄りそい、わかりやすく伝えます。診断はせず、必要なら理由を添えて受診を勧めます。返答は150〜200文字。結論を急がず段階的に説明し、最後は必ず1〜2個の短い質問で終えて会話を続けてください。
+' },
           { role: 'user', content: prompt }
         ]
       }

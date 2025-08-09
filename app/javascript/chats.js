@@ -386,13 +386,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // ============ 初期化 ============
   
-  InitializeInterface();
+  // Turbo対応
+  document.addEventListener('turbo:load', () => {
+    InitializeInterface();
   
-  // モーダル外クリックで閉じる
-  window.addEventListener('click', (event) => {
-    const modal = document.getElementById('threads-modal');
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
+    // モーダル外クリックで閉じる
+    window.addEventListener('click', (event) => {
+      const modal = document.getElementById('threads-modal');
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
   });
 });

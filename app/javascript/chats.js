@@ -131,21 +131,25 @@ document.addEventListener('DOMContentLoaded', () => {
   
   function fetchAndDisplayThread(chatThreadId) {
     fetch(`/chat_threads/${chatThreadId}`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
     })
-    .then(response => response.json())
+    .then(r => r.json())
     .then(data => {
+      console.log('[debug] keys=', Object.keys(data || {}));
+      console.log('[debug] messages.len=', Array.isArray(data.messages) ? data.messages.length : 'NO ARRAY');
+      console.log('[debug] first message=', data.messages?.[0]);
+  
       history.pushState(null, '', `/chat_threads/${chatThreadId}`);
       hideThreadsModal();
-      updateChatInterface(data.chat_thread, data.messages);
+  
+      // ← 念のためどこに入っていても拾えるようにする
+      const msgs =
+        data.messages ??
+        data.chat_thread?.messages ??
+        [];
+      updateChatInterface(data.chat_thread, msgs);
     })
-    .catch(error => {
-      alert('スレッドの読み込みに失敗しました。もう一度お試しください。');
-      console.error(error);
-    });
+    .catch(e => { alert('スレッドの読み込みに失敗しました'); console.error(e); });
   }
   
   // ============ UI更新関数 ============

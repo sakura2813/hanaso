@@ -156,8 +156,12 @@ document.addEventListener('DOMContentLoaded', () => {
       centerContainer.remove();
     }
     
-    // DOM全体を再構築
-    document.body.innerHTML = '';
+    // レイアウトは残し、チャット領域だけ差し替え
+    const root = document.getElementById('chat-app');
+    if (!root) {
+      console.error('#chat-app が見つかりません（application.html.erb を確認）');
+      return;
+    }
     
     const newHtml = `
       <pre style="display: none;">${chatThread.context || ''}</pre>
@@ -184,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
     `;
     
-    document.body.insertAdjacentHTML('afterbegin', newHtml);
+    root.innerHTML = newHtml;
     
     // メッセージを追加
     if (messages && Array.isArray(messages)) {
@@ -271,7 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const newTitleElement = document.createElement('h1');
       newTitleElement.id = 'thread-title';
       newTitleElement.textContent = title;
-      document.body.insertBefore(newTitleElement, document.body.firstChild);
+      const root = document.getElementById('chat-app') || document.body;
+      root.insertBefore(newTitleElement, root.firstChild);
     }
   }
   

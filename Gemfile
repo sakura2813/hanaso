@@ -71,3 +71,7 @@ end
 gem 'devise'
 
 gem 'http'
+
+group :production do
+  gem 'pg'
+end

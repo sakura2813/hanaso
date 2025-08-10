@@ -24,7 +24,14 @@ class ChatThreadsController < ApplicationController
     @message = @chat_thread.messages.build
 
     respond_to do |format|
-      format.json { render json: { chat_thread: @chat_thread } }
+      format.json do
+        render json: {
+          chat_thread: @chat_thread.as_json(only: [:id, :title, :context]),
+          messages: @chat_thread.messages.order(:created_at).as_json(
+            only: [:id, :prompt, :response, :created_at]
+          )
+        }
+      end
       format.html { render :index }
     end
   end

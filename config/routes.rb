@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   resources :chat_threads, only: [:index, :show, :create] do
     resources :messages, only: :create
   end
-  resources :symptoms, only: [:index, :show]
+  resources :symptoms
 end

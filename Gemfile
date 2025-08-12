@@ -78,3 +78,5 @@ end
 
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
+gem "activeadmin", "~> 3.3"
+gem "sassc-rails"

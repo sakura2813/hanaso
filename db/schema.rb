@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_08_07_162442) do
+ActiveRecord::Schema[7.1].define(version: 2025_08_12_011312) do
   create_table "chat_threads", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "symptom_id"
@@ -30,6 +30,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_08_07_162442) do
     t.text "prompt"
     t.text "response"
     t.index ["chat_thread_id"], name: "index_messages_on_chat_thread_id"
+  end
+
+  create_table "symptoms", charset: "utf8mb3", force: :cascade do |t|
+    t.string "title"
+    t.text "summary"
+    t.text "home_care"
+    t.text "checkpoints"
+    t.text "visit_immediate"
+    t.text "visit_hours"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb3", force: :cascade do |t|

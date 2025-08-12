@@ -3,7 +3,9 @@ class SymptomsController < ApplicationController
     @symptoms = Symptom.order(:title)
   end
 
-  def show; end
+  def show
+    @symptom = Symptom.find(params[:id])
+  end
 
   def new
     @symptom = Symptom.new
@@ -36,7 +38,8 @@ class SymptomsController < ApplicationController
   private
 
   def set_symptom
-    @symptom = Symptom.find(params[:id])
+    @symptom = Symptom.find_by(id: params[:id])
+    redirect_to symptoms_path, alert: '症状が見つかりませんでした' unless @symptom
   end
 
   def symptom_params

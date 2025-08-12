@@ -103,3 +103,4 @@ Symptom.find_or_create_by!(title: "アレルギー疾患") do |s|
   s.visit_immediate = "呼吸困難、全身に急速に広がる発疹。"
   s.visit_hours = "症状悪化、薬で改善しない。"
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

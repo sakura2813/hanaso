@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'symptoms/index'
+  get 'symptoms/show'
   devise_for :users
   root to: 'home#index'
   resources :chat_threads, only: [:index, :show, :create] do

@@ -44,6 +44,10 @@ https://hanaso.onrender.com
 - Basic認証ID: admin
 - Basic認証パスワード: 2222
 
+# 管理者アカウント
+- メールアドレス: admin@example.com
+- パスワード: password
+
 ---
 
 ## 利用方法

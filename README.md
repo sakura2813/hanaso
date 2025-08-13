@@ -44,6 +44,10 @@ https://hanaso.onrender.com
 - Basic認証ID: admin
 - Basic認証パスワード: 2222
 
+# 管理者アカウント
+- メールアドレス: admin@example.com
+- パスワード: password
+
 ---
 
 ## 利用方法
@@ -146,11 +150,13 @@ https://hanaso.onrender.com
 
 | Column          | Type       | Options     |
 |-----------------|------------|-------------|
-| id              | integer    | PRIMARY KEY |
+| id              | bigint     | PRIMARY KEY |
 | title           | string     | null: false |
-| description     | text       |             |
-| self_care       | text       |             |
-| emergency_level | integer    |             |
+| summary         | text       |             |
+| home_care       | text       |             |
+| checkpoints     | text       |             |
+| visit_immediate | text       |             |
+| visit_hours     | text       |             |
 | created_at      | datetime   | null: false |
 | updated_at      | datetime   | null: false |
 

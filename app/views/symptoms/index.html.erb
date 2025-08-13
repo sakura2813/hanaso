@@ -1,0 +1,13 @@
+<!-- app/views/symptoms/index.html.erb -->
+<div class="max-w-5xl mx-auto p-4 md:p-6">
+  <h1 class="text-2xl md:text-3xl font-bold mb-4">症状チェック</h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <% @symptoms.each do |s| %>
+      <%= link_to symptom_path(s), class: "block rounded-2xl shadow p-6 bg-white hover:shadow-md transition text-center" do %>
+        <p class="text-lg font-semibold"><%= s.title %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+

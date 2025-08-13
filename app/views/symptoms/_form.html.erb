@@ -1,0 +1,47 @@
+<!-- app/views/symptoms/_form.html.erb -->
+<%= form_with(model: @symptom, class: "space-y-4") do |f| %>
+  <div>
+    <%= f.label :title, "タイトル", class: "block font-semibold mb-1" %>
+    <%= f.text_field :title, class: "w-full border rounded p-2" %>
+  </div>
+
+  <div>
+    <%= f.label :summary, "概要", class: "block font-semibold mb-1" %>
+    <%= f.text_area :summary, rows: 3, class: "w-full border rounded p-2" %>
+  </div>
+
+  <div>
+    <%= f.label :home_care, "おうちケア", class: "block font-semibold mb-1" %>
+    <%= f.text_area :home_care, rows: 4, class: "w-full border rounded p-2" %>
+  </div>
+
+  <div>
+    <%= f.label :checkpoints, "チェックポイント", class: "block font-semibold mb-1" %>
+    <%= f.text_area :checkpoints, rows: 4, class: "w-full border rounded p-2" %>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-4">
+    <div>
+      <%= f.label :visit_immediate, "すぐ受診", class: "block font-semibold mb-1" %>
+      <%= f.text_area :visit_immediate, rows: 4, class: "w-full border rounded p-2" %>
+    </div>
+    <div>
+      <%= f.label :visit_hours, "診療時間内に受診", class: "block font-semibold mb-1" %>
+      <%= f.text_area :visit_hours, rows: 4, class: "w-full border rounded p-2" %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :image, "画像", class: "block font-semibold mb-1" %>
+    <%= f.file_field :image, class: "w-full" %>
+    <% if @symptom.image.attached? %>
+      <div class="mt-2">
+        <%= image_tag @symptom.image, class: "h-24 w-24 object-cover rounded" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="pt-2">
+    <%= f.submit class: "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" %>
+  </div>
+<% end %>

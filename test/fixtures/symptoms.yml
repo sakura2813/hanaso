@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  summary: MyText
+  home_care: MyText
+  checkpoints: MyText
+  visit_immediate: MyText
+  visit_hours: MyText
+
+two:
+  title: MyString
+  summary: MyText
+  home_care: MyText
+  checkpoints: MyText
+  visit_immediate: MyText
+  visit_hours: MyText

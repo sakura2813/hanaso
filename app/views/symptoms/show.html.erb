@@ -1,57 +1,40 @@
-<div class="max-w-3xl mx-auto p-4 md:p-6 space-y-6">
-  <%= link_to "← 一覧へ", symptoms_path, class: "text-sm text-gray-600 hover:underline" %>
-
-  <header>
-    <h1 class="text-3xl md:text-4xl font-bold leading-snug md:leading-tight break-words">
-      <%= @symptom.title %>
-    </h1>
-    <% if @symptom.summary.present? %>
-      <p class="mt-4 text-lg md:text-xl leading-relaxed md:leading-loose text-gray-800 break-words">
-        <%= simple_format(@symptom.summary) %>
-      </p>
-    <% end %>
-  </header>
-
-  <% if @symptom.image.attached? %>
-    <div class="my-4">
-      <%= image_tag @symptom.image, alt: @symptom.title,
-            loading: "lazy", class: "w-full max-w-2xl rounded-xl shadow mx-auto block" %>
-      <%# variantを使うならImageMagick必須
-      <%= image_tag @symptom.image.variant(resize_to_limit: [1600, 1200]).processed, alt: @symptom.title,
-            loading: "lazy", class: "w-full max-w-2xl rounded-xl shadow mx-auto block" %>
+<header>
+  <h1 class="text-3xl md:text-4xl font-bold leading-snug md:leading-tight break-words">
+    <%= @symptom.title %>
+  </h1>
+  <% if @symptom.summary.present? %>
+    <!-- ← ここは <p> ではなく <div> で包む -->
+    <div class="mt-4 text-lg md:text-xl leading-relaxed md:leading-loose text-gray-800 break-words">
+      <%= simple_format(@symptom.summary, {}, sanitize: true) %>
     </div>
   <% end %>
+</header>
 
-  <section class="bg-white rounded-2xl shadow p-5">
-    <h2 class="text-2xl font-semibold leading-snug md:leading-tight break-words">
-      おうちケアのポイント
-    </h2>
-    <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose prose max-w-none break-words">
-      <%= simple_format(@symptom.home_care) %>
-    </div>
-  </section>
+<section class="bg-white rounded-2xl shadow p-5">
+  <h2 class="text-2xl font-semibold leading-snug md:leading-tight break-words">おうちケアのポイント</h2>
+  <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose prose max-w-none break-words">
+    <%= simple_format(@symptom.home_care, {}, sanitize: true) %>
+  </div>
+</section>
 
-  <section class="bg-white rounded-2xl shadow p-5">
-    <h2 class="text-2xl font-semibold leading-snug md:leading-tight break-words">
-      チェックポイント
-    </h2>
-    <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose prose max-w-none break-words">
-      <%= simple_format(@symptom.checkpoints) %>
-    </div>
-  </section>
+<section class="bg-white rounded-2xl shadow p-5">
+  <h2 class="text-2xl font-semibold leading-snug md:leading-tight break-words">チェックポイント</h2>
+  <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose prose max-w-none break-words">
+    <%= simple_format(@symptom.checkpoints, {}, sanitize: true) %>
+  </div>
+</section>
 
-  <section class="grid gap-4 md:grid-cols-2">
-    <div class="bg-white rounded-2xl shadow p-5">
-      <h3 class="text-xl font-semibold leading-snug md:leading-tight break-words">すぐに受診</h3>
-      <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose break-words">
-        <%= simple_format(@symptom.visit_immediate) %>
-      </div>
+<section class="grid gap-4 md:grid-cols-2">
+  <div class="bg-white rounded-2xl shadow p-5">
+    <h3 class="text-xl font-semibold leading-snug md:leading-tight break-words">すぐに受診</h3>
+    <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose break-words">
+      <%= simple_format(@symptom.visit_immediate, {}, sanitize: true) %>
     </div>
-    <div class="bg-white rounded-2xl shadow p-5">
-      <h3 class="text-xl font-semibold leading-snug md:leading-tight break-words">診療時間内に受診</h3>
-      <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose break-words">
-        <%= simple_format(@symptom.visit_hours) %>
-      </div>
+  </div>
+  <div class="bg-white rounded-2xl shadow p-5">
+    <h3 class="text-xl font-semibold leading-snug md:leading-tight break-words">診療時間内に受診</h3>
+    <div class="mt-3 text-lg md:text-xl leading-relaxed md:leading-loose break-words">
+      <%= simple_format(@symptom.visit_hours, {}, sanitize: true) %>
     </div>
-  </section>
-</div>
+  </div>
+</section>

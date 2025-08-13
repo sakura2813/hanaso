@@ -16,12 +16,12 @@ ActiveAdmin.register Symptom do
   show do
     attributes_table do
       row :title
-      row :summary
-      row :home_care
-      row :checkpoints
-      row :visit_immediate
-      row :visit_hours
-      row :image do |s|
+      row(:summary)         { |s| simple_format(s.summary, {}, sanitize: true) }
+      row(:home_care)       { |s| simple_format(s.home_care, {}, sanitize: true) }
+      row(:checkpoints)     { |s| simple_format(s.checkpoints, {}, sanitize: true) }
+      row(:visit_immediate) { |s| simple_format(s.visit_immediate, {}, sanitize: true) }
+      row(:visit_hours)     { |s| simple_format(s.visit_hours, {}, sanitize: true) }
+      row(:image) do |s|
         image_tag url_for(s.image.variant(resize_to_fit: [800, 600])) if s.image.attached?
       end
       row :created_at
@@ -33,13 +33,13 @@ ActiveAdmin.register Symptom do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :summary
-      f.input :home_care
-      f.input :checkpoints
-      f.input :visit_immediate
-      f.input :visit_hours
+      f.input :summary,         as: :text, input_html: { rows: 8 }
+      f.input :home_care,       as: :text, input_html: { rows: 10 }
+      f.input :checkpoints,     as: :text, input_html: { rows: 8 }
+      f.input :visit_immediate, as: :text, input_html: { rows: 8 }
+      f.input :visit_hours,     as: :text, input_html: { rows: 8 }
       f.input :image, as: :file,
-                      hint: (image_tag url_for(f.object.image), style: 'height:80px' if f.object.image.attached?)
+        hint: (image_tag url_for(f.object.image), style: 'height:80px' if f.object.image.attached?)
     end
     f.actions
   end

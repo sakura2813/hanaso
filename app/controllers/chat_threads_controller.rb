@@ -1,8 +1,14 @@
 class ChatThreadsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @chat_threads = ChatThread.order(created_at: :desc)
-
+    latest = Message
+               .select('chat_thread_id, MAX(created_at) AS last_message_at')
+               .group(:chat_thread_id)
+  
+    @chat_threads = ChatThread
+                      .joins("INNER JOIN (#{latest.to_sql}) latest ON latest.chat_thread_id = chat_threads.id")
+                      .order('latest.last_message_at DESC')
+  
     respond_to do |format|
       format.json { render json: { chat_threads: @chat_threads } }
       format.html

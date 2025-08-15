@@ -55,23 +55,30 @@ https://hanaso.onrender.com
 2. メッセージ入力欄に相談内容を入力し、送信ボタン（↑）またはEnterキーで送信
 3. AIからの返信を確認し、必要に応じてやり取りを継続
 4. 過去のチャット履歴は「スレッド一覧」から確認・再開が可能
-5. 症状チェックを使う場合：トップの「症状チェック」から症状を選び、概要／おうちケア／チェックポイント／受診目安を参照
+5. 症状から探す機能はトップページにあるボタンをクリックし、受診の目安やホームケアを確認可能。
+6. 各症状のチャット相談ボタンから、症状についての相談が可能。
 
 ---
 
 ## 実装した機能についての画像やGIFおよびその説明
+- **ホーム画面**  
+  PC・スマホ両対応のUI設計  
+  [![PC](https://i.gyazo.com/2696e1507f9beb2be71d98cb8f5dfe63.png)](https://gyazo.com/2696e1507f9beb2be71d98cb8f5dfe63)
+  [![Mobile](https://i.gyazo.com/954f26e0cd3e764655e7ee993a662b07.png)](https://gyazo.com/954f26e0cd3e764655e7ee993a662b07)
 - **チャット機能**  
   ユーザーが入力したメッセージに対し、AI（ChatGPT API）からの応答をリアルタイムに表示  
-  [![Image from Gyazo](https://i.gyazo.com/e3b4003b27f29508de545a15cf7cbe1b.png)](https://gyazo.com/e3b4003b27f29508de545a15cf7cbe1b)
+  [![PC](https://i.gyazo.com/464614465de9a0a37036e979cbb70f83.png)](https://gyazo.com/464614465de9a0a37036e979cbb70f83)
+  [![Mobile](https://i.gyazo.com/7b04e4ee45b59a3faed77ed2d5bcd5c5.png)](https://gyazo.com/7b04e4ee45b59a3faed77ed2d5bcd5c5)
 - **スレッド管理機能**  
   過去の会話スレッドを保存・一覧表示し、いつでも再開可能  
-  [![Image from Gyazo](https://i.gyazo.com/c3acf21a323fef996f1649180a86f114.png)](https://gyazo.com/c3acf21a323fef996f1649180a86f114)
-- **症状チェック機能**
+  [![PC](https://i.gyazo.com/c3acf21a323fef996f1649180a86f114.png)](https://gyazo.com/c3acf21a323fef996f1649180a86f114)
+  [![Mobile](https://i.gyazo.com/387558f5083ce012bd845588c7e7e6a0.png)](https://gyazo.com/387558f5083ce012bd845588c7e7e6a0)
+- **症状から探す機能**
   子どもの症状を想定し、症状の概要／おうちケアのポイント／チェックポイント／受診目安（すぐ受診・診療時間内受診）を構造化して表示。
-  [![Image from Gyazo](https://i.gyazo.com/a29441d033687b6beba86a0738324074.png)](https://gyazo.com/a29441d033687b6beba86a0738324074)
-- **レスポンシブデザイン**  
-  PC・スマホ両対応のUI設計  
-  （画像URL）
+  [![PC](https://i.gyazo.com/a29441d033687b6beba86a0738324074.png)](https://gyazo.com/a29441d033687b6beba86a0738324074)
+  [![Mobile](https://i.gyazo.com/d88c22da7a25695c68d3d5d518ed6a1c.png)](https://gyazo.com/d88c22da7a25695c68d3d5d518ed6a1c)
+- **症状のチャット相談機能**
+  [![Image from Gyazo](https://i.gyazo.com/7fa2e7407b7b448cc53df9762e81d2b0.png)](https://gyazo.com/7fa2e7407b7b448cc53df9762e81d2b0)
 
 ---
 

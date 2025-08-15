@@ -28,7 +28,12 @@
 
   <%= form_with(model: [@chat_thread, @message], id: 'generation-form') do |form| %>
     <div class="textarea-with-submit-inside">
-      <%= form.text_area :prompt, class: "rounded-corners" %>
+      <%= form.text_area :prompt,
+          class: "rounded-corners chat-textarea",
+          placeholder: "お子さんの様子や気になることを入力してください",
+          "aria-label": "チャット入力欄",
+          rows: 1,
+          autocomplete: "off" %>
       <%= form.submit '↑', class: "submit-within-textarea rounded-corners" %>
     </div>
   <% end %>

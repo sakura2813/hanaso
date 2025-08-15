@@ -73,6 +73,7 @@ textarea {
   max-height: 300px;
   width: 100%;
   flex-grow: 1;
+  font-size: 1.0625rem; /* 追加：約17px（任意で1.125rem=18pxでもOK） */
 }
 
 textarea:focus {
@@ -227,6 +228,27 @@ background-color: seagreen;
 
 .response-text {
 line-height: 1.6;
+}
+
+/* チャット本文を少し大きく（16px → 18px） */
+#messages-list .prompt-text,
+#messages-list .response-text {
+  font-size: 1.125rem;   /* 18px */
+  line-height: 1.7;      /* 読みやすく少し広め */
+}
+
+/* ラベル「You:」「GPT:」は控えめに（任意） */
+#messages-list .prompt,
+#messages-list .response {
+  font-size: 1rem;       /* 16pxのまま。少し上げたいなら 1.0625rem(17px) */
+}
+
+/* モバイルは控えめに（任意） */
+@media (max-width: 640px) {
+  #messages-list .prompt-text,
+  #messages-list .response-text {
+    font-size: 1.0625rem;  /* 約17px */
+  }
 }
 
 .response-text h1, .response-text h2, .response-text h3, .response-text h4, .response-text h5, .response-text h6 {

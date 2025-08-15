@@ -38,3 +38,12 @@
     </div>
   </div>
 </section>
+
+<section class="mt-8 text-center">
+  <%= button_to "この症状について相談する",
+      start_chat_symptom_path(@symptom),
+      method: :post,
+      class: "inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold rounded-full py-3 px-6 text-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5" %>
+</section>
+
+

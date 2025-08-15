@@ -35,6 +35,16 @@ class SymptomsController < ApplicationController
     redirect_to symptoms_path, notice: '症状を削除しました。'
   end
 
+  def start_chat
+    @symptom = Symptom.find(params[:id])
+    @chat_thread = current_user.chat_threads.create!(
+      title: @symptom.title,
+      context: "症状: #{@symptom.title}\n#{@symptom.summary}"
+    )
+  
+    redirect_to chat_thread_path(@chat_thread)
+  end
+  
   private
 
   def set_symptom
